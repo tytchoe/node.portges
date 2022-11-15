@@ -17,6 +17,8 @@ module.exports = app => {
   
     // Delete a product with id
     router.delete("/:id", product.delete);
+
+    router.post("/:name/:page", product.findAndCountAll);
   
     app.use('/api/products', router);
   };

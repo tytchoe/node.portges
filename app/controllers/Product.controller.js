@@ -107,3 +107,29 @@ exports.delete = (req,res)=>{
         })
     })
 };
+
+exports.findAndCountAll = async (req, res)=>{
+    const name = req.params.name;
+    const page = req.params.page;
+    const limit = 10;
+
+    const {count, rows} =  await Product.findAndCountAll({
+        where : {
+            Name: {
+                [Op.substring]: name
+            }
+        },
+        limit: 10,
+        offset: Number(page-1)*limit
+    })
+    if(count) {
+        const totalPages = Math.ceil(count / limit);
+        res.send({
+            message: count,totalPages, rows
+          });
+    }else{
+        res.status(404).send({
+            message:"Can not find"
+        })
+    }    
+}
