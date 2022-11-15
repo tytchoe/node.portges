@@ -130,7 +130,7 @@ exports.findAndCountAll = async (req, res)=>{
             })
         }else{
             res.send({
-                message: "",count,totalPages, rows
+                message: "get all",count,totalPages, rows
               })
         }
     }else{
