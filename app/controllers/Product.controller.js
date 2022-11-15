@@ -125,7 +125,7 @@ exports.findAndCountAll = async (req, res)=>{
     if(count) {
         const totalPages = Math.ceil(count / limit);
         res.send({
-            message: count,totalPages, rows
+            message: "",count,totalPages, rows
           });
     }else{
         res.status(404).send({
