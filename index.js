@@ -9,6 +9,7 @@ var checkRequest = (req, res, next) => {
         next()
     }
 }
+
 //Khai báo sử dụng middleware
 app.use(checkRequest)
 //Khởi tạo route mới
