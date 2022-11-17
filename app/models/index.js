@@ -21,4 +21,6 @@ db.sequelize = sequelize;
 
 db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.products = require("./Product.model.js")(sequelize,Sequelize);
+db.AnnualFee = require("./AnnualFee.js")(sequelize,Sequelize);
+db.FeeCategory = require("./FeeCategory.js")(sequelize,Sequelize);
 module.exports = db;
