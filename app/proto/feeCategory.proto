@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package feeCategory;
+
+
+
+message FeeCategory {
+    int64 Id = 1;
+    string FeeName = 2;
+}
+
+service FeeCategoryService {
+  rpc getAll (Empty) returns (FeeCategories) {}
+}
+message Empty {
+
+}
+message FeeCategories  {
+    repeated    FeeCategory result = 1;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package product;
+
+message Product {
+    int64 Id = 1;
+    string Name = 2;
+    string Color = 3;
+    string Price = 4;
+}
+
+service ProductService {
+  rpc findAll (Empty) returns (Products) {}
+  rpc findOne (ProductId)   returns     (Product)
+}
+message Empty {
+
+}
+message Products  {
+    repeated    Product products = 1;
+}
+message ProductId {
+    int32 Id = 1;
+}
