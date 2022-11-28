@@ -11,7 +11,7 @@ message Product {
 
 service ProductService {
   rpc findAll (Empty) returns (Products) {}
-  rpc findOne (ProductId)   returns     (Product)
+  rpc findOne (ProductId)   returns     (Product) {}
 }
 message Empty {
 
